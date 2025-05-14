@@ -1,0 +1,30 @@
+-------------------------------------------
+ Notes on unit tests
+-------------------------------------------
+
+run single test case: 
+> python -m unittest test.test_nodes
+
+run single test:
+> python -m unittest test.test_artifacts.TestArtifacts.test_checkout_artifacts
+
+run all tests: 
+> python -m unittest discover -s test   
+
+-------------------------------------------
+
+doc: https://docs.python.org/3/library/unittest.html
+
+def setUp(self):
+    print("before each test")
+
+def tearDown(self):
+    print("after each test")
+
+@classmethod
+def setUpClass(cls):
+    print("once before all tests")
+
+@classmethod
+def tearDownClass(cls):
+    print("once after all tests")
