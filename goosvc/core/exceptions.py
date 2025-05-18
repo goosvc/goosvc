@@ -49,6 +49,7 @@ class GoosvcException(Exception):
         "1028": {"status": "error", "message": "Banching refused. You can not branch off in the middle of a transaction.", "type": "BAD_REQUEST"},
         "1029": {"status": "error", "message": "Invalid parent.", "type": "BAD_REQUEST"},
         "1030": {"status": "error", "message": "Missing transaction id.", "type": "BAD_REQUEST"},
+        "1031": {"status": "error", "message": "Invalid response", "type": "INTERNAL_SERVER_ERROR"},
 
     }
 
