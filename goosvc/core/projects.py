@@ -194,6 +194,9 @@ class GoosvcProjects:
         # remove lock
         if owner in self.project_locks and project_name in self.project_locks[owner]:
             del self.project_locks[owner][project_name]
+        # remove project from memory
+        if owner in self.projects and project_name in self.projects[owner]:
+            del self.projects[owner][project_name]
         return True
     
     def lock_project(self, owner: str, project: str):
