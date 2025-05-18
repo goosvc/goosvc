@@ -32,7 +32,7 @@ class Goosvc:
         else:
             return self.core.projects.get_project_names(owner)
 
-    def create_project(self, owner: str, project: str, project_description: str = "", requester: str = "app"):
+    def create_project(self, owner: str, project: str, project_description: str, requester: str = "app"):
         if requester != "app" and requester != owner:
             raise GoosvcException("1004")
         return self.core.projects.create_project(owner, project, project_description)
