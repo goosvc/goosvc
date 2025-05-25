@@ -206,6 +206,11 @@ class Goosvc:
         if self.permission(owner, project, requester).read:
             return self.core.artifacts.get_artifact_node_by_name(owner, project, id, chat_id, filename, path)
         raise GoosvcException("1002")
+    
+    def get_artifact_nodes_by_path(self, owner: str, project: str, id: str, chat_id: str, path: str, exclude_filenames:list, requester: str = "app"):
+        if self.permission(owner, project, requester).read:
+            return self.core.artifacts.get_artifact_nodes_by_path(owner, project, id, chat_id, path, exclude_filenames)
+        raise GoosvcException("1002")
         
     def get_artifacts(self, owner: str, project: str, id: str, chat_id: str, requester: str = "app"):
         if self.permission(owner, project, requester).read:

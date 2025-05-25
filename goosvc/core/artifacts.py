@@ -217,6 +217,13 @@ class GoosvcArtifacts:
                 return artifact_node
         return None
     
+    # returns the artifact node for a given artifact (identified by path) in a chat (identified by its chat_id)
+    def get_artifact_nodes_by_path(self, owner: str, project: str, id: str, chat_id: str, path: str, exclude_filenames:list):
+        artifact_nodes = self.get_artifact_nodes(owner, project, id, chat_id)
+        artifact_nodes = [artifact_node for artifact_node in artifact_nodes if artifact_node.content['path'] == path and artifact_node.content['filename'] not in exclude_filenames]
+        
+        return artifact_nodes
+    
     # returns the artifact node for a given artifact (identified by its artifact_id)
     def get_artifact_node(self, owner: str, project: str, artifact_id: str):
         artifact_node = self.nodes.get_node(owner, project, artifact_id)
